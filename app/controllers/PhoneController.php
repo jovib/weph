@@ -125,9 +125,11 @@ class PhoneController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($phone_id)
 	{
-		//
+		$phone = Phone::find($phone_id);
+		$phone->delete();
+		return Redirect::to('phone');
 	}
 
 
