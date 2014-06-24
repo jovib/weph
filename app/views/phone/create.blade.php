@@ -1,11 +1,7 @@
-<!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<title>Phonebook</title>
-	</head>
-	<body>
-		<h1>Nuevo anie</h1>
+@extends('layouts/master')
+
+@section('cont')
+		<h2>Nuevo anie</h2>
 		{{Form::open(array('url'=>'phone'))}}
 
 			<div>
@@ -40,5 +36,5 @@
 			{{Form::submit('Salvar')}}
 
 		{{Form::close()}}
-	</body>
-</html>
+
+@stop

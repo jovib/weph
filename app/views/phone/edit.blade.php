@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta chaset="uft-8">
-	<title>Phonebook</title>
-</head>
-<body>
-<h1>Editando {{$phone->firstname}} {{$phone->firstname}}</h1>
+@extends('layouts/master')
+
+@section('cont')
+<h2>Editando {{$phone->firstname}} {{$phone->firstname}}</h2>
 	{{Form::model($phone, array('route'=>array('phone.update', $phone->phone_id), 'method'=>'PUT'))}}
 		<div>
 			{{Form::text('anie', null)}}
@@ -30,5 +26,5 @@
 		</div>
 		{{Form::submit('salvar')}}
 	{{Form::close()}}
-</body>
-</html>
+
+@stop

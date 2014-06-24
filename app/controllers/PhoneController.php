@@ -49,9 +49,17 @@ class PhoneController extends \BaseController {
 			$phone->lastname=Input::get('lastname');
 			$phone->celular=Input::get('celular');
 			$phone->cargo=Input::get('cargo');
-			$phone->Dep=Input::get('Dep');
+			$phone->dep=Input::get('dep');
 			$phone->note=Input::get('note');
 			$phone->save();
+
+			Session::flash('message', '
+			<div class="alert alert-succes fade in">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4>Cambio satisfactorio!!</h4>
+			<p>Contacto creado correctamente!!</p>
+			</div>');
+
 			return Redirect::to('phone');
 		}
 	}
@@ -111,9 +119,17 @@ class PhoneController extends \BaseController {
 			$phone->lastname = Input::get('lastname');
 			$phone->celular = Input::get('celular');
 			$phone->cargo = Input::get('cargo');
-			$phone->Dep = Input::get('Dep');
+			$phone->dep = Input::get('dep');
 			$phone->note = Input::get('note');
 			$phone->save();
+
+			Session::flash('message', '
+			<div class="alert alert-success fade in">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4>Cambio satisfactorio!!</h4>
+			<p>Contacto actualizado correctamente!!</p>
+			</div>');
+			
 			return Redirect::to('phone');
 		}
 	}
@@ -129,6 +145,12 @@ class PhoneController extends \BaseController {
 	{
 		$phone = Phone::find($phone_id);
 		$phone->delete();
+		Session::flash('message', '
+			<div class="alert alert-warning fade in">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	        <h4>Oh snap!</h4>
+	        <p>Contacto borrado correctamente!!</p>
+	        </div>');
 		return Redirect::to('phone');
 	}
 
