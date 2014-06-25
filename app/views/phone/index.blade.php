@@ -2,7 +2,7 @@
 
 @section('js-tablesorter')
 <script>
-	$(function() {
+$(function() {
 	var $table = $('table').tablesorter({
 		theme: 'default',
 		widgets: ["zebra", "filter"],
@@ -12,8 +12,8 @@
 			filter_saveFilters : true,
 			filter_reset: '.reset'
 		}
-		});
 	});
+});
 </script>
 
 @stop
@@ -26,6 +26,10 @@
 	<button type="submit" class="reset btn btn-default">clear</button>
 </form>
 
+@stop
+
+@section('phone-active')
+class="active"
 @stop
 
 @section('cont')
@@ -50,7 +54,7 @@
 			<td>{{$value->cargo}}</td>
 			<td>
 				<div>
-					<button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#dtl{{$value->phone_id}}">VER</button>
+					<button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#dtl{{$value->phone_id}}">Ver</button>
 					<a href="{{URL::to('phone/'.$value->phone_id.'/edit')}}"><button type="button" class="btn btn-xs btn-primary">Editar</button></a>
 					<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#rmv{{$value->phone_id}}">Borrar</button>
 				</div>
