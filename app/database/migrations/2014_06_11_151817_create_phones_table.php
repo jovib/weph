@@ -18,9 +18,10 @@ class CreatePhonesTable extends Migration {
 			$table->string('anie',10);
 			$table->string('firstname',30);
 			$table->string('lastname',30);
+			$table->string('mail',30);->nullable()->default('deconocido');
 			$table->string('celular',15)->nullable()->default('deconocido');
 			$table->string('cargo',50)->nullable()->default('deconocido');
-			$table->string('Dep',50)->nullable()->default('deconocido');
+			$table->string('dep',50)->nullable()->default('deconocido');
 			$table->string('note',140)->nullable()->default('sin_DATA');
 			$table->timestamps();
 		});
