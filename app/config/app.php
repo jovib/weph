@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'America/Panama_City',
+	'timezone' => 'America/Panama',
 
 	/*
 	|--------------------------------------------------------------------------
