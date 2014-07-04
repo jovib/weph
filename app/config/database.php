@@ -39,7 +39,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/',
+			'host'      => '127.13.157.2:31173',
 			'database'  => 'phone',
 			'username'  => 'adminXypxBCH',
 			'password'  => 'adminXypxBCH',

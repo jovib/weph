@@ -12,7 +12,17 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('users', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->string('firstname',30);
+			$table->string('lastname',30);
+			$table->string('mail',30);->nullable()->default('deconocido');
+			$table->string('username',20);
+			$table->string('password',69);
+			$table->timestamps();
+
+		});
 	}
 
 	/**
@@ -22,7 +32,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('users');
 	}
 
 }
