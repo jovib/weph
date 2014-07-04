@@ -39,10 +39,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'contac',
-			'username'  => 'root',
-			'password'  => 'Mateo2819',
+			'host'      => 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/',
+			'database'  => 'phone',
+			'username'  => 'adminXypxBCH',
+			'password'  => 'adminXypxBCH',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
