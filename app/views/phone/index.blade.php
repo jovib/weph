@@ -32,6 +32,10 @@ $(function() {
 class="active"
 @stop
 
+@section('phone-create-active')
+<li class="active"><a href="{{URL::to('/phone/create')}}">Crear</a></li>
+@stop
+
 @section('cont')
 @if (Session::has('message'))
 	{{ Session::get('message') }}
