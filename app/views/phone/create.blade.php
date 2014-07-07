@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
-@section('phone-create-active')
-class="active"
+@section('phone-create')
+<li class="active"><a href="{{URL::to('/phone/create')}}">Crear</a></li>
 @stop
 
 @section('cont')

@@ -33,7 +33,7 @@ class="active"
 @stop
 
 @section('phone-create')
-<li @yield('phone-create-active')><a href="{{URL::to('/phone/create')}}">Crear</a></li>
+<li><a href="{{URL::to('/phone/create')}}">		Crear</a></li>
 @stop
 
 @section('cont')
