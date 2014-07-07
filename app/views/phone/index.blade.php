@@ -32,8 +32,8 @@ $(function() {
 class="active"
 @stop
 
-@section('phone-create-active')
-<li class="active"><a href="{{URL::to('/phone/create')}}">Crear</a></li>
+@section('phone-create')
+<li @yield('phone-create-active')><a href="{{URL::to('/phone/create')}}">Crear</a></li>
 @stop
 
 @section('cont')

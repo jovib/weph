@@ -1,5 +1,9 @@
 @extends('layouts/master')
 
+@section('phone-create-active')
+class="active"
+@stop
+
 @section('cont')
 <div class="col-xs-10">
 	<div class="panel panel-primary">
