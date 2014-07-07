@@ -28,7 +28,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-xs-4">
-				{{Form::text('mail',Input::old('mail'), array('class'=>'form-control', 'placeholder'=>'name@mail'))}}
+				{{Form::text('mail',Input::old('mail'), array('class'=>'form-control', 'placeholder'=>'Correo'))}}
 				</div>
 				<div class="col-xs-4">
 				{{Form::text('celular',Input::old('celular'), array('class'=>'form-control', 'placeholder'=>'Celular'))}}
@@ -38,8 +38,8 @@
 				<div class="col-xs-3">
 				{{Form::text('cargo',Input::old('cargo'), array('class'=>'form-control', 'placeholder'=>'Cargo'))}}
 				</div>
-				<div class="col-xs-2">
-				{{Form::select('dep', array('UNKNOWN' => 'DEPARTAMENTO','SERVICIO TECNICO' => 'SERVICIO TECNICO','REPUESTOS' => 'REPUESTOS', 'MARKETING' => 'MARKETING', 'MAQUINARIA -- INDUSTRIAL' => 'MAQUINARIA -- INDUSTRIAL', 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD' => 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD', 'GTOS DEPTO. DE SISTEMAS' => 'GTOS DEPTO. DE SISTEMAS', 'EJECUTIVO' => 'EJECUTIVO', 'DESARROLLO DE PERSONAL Y SGI' => 'DESARROLLO DE PERSONAL Y SGI', 'CONTRALORIA' => 'CONTRALORIA'));}}
+				<div class="col-xs-3">
+				{{Form::select('dep', array('UNKNOWN' => 'DEPARTAMENTO','SERVICIO TECNICO' => 'SERVICIO TECNICO','REPUESTOS' => 'REPUESTOS', 'MARKETING' => 'MARKETING', 'MAQUINARIA -- INDUSTRIAL' => 'MAQUINARIA -- INDUSTRIAL', 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD' => 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD', 'GTOS DEPTO. DE SISTEMAS' => 'GTOS DEPTO. DE SISTEMAS', 'EJECUTIVO' => 'EJECUTIVO', 'DESARROLLO DE PERSONAL Y SGI' => 'DESARROLLO DE PERSONAL Y SGI', 'CONTRALORIA' => 'CONTRALORIA'), null, array('class'=>'form-control'));}}
 				</div>
 			
 			</div>
@@ -49,9 +49,12 @@
 				</div>
 			
 			</div>
-
-			{{Form::submit('Salvar')}}
-
+			<div class="form-group">
+				<div class="col-xs-3">
+				{{Form::submit('Salvar', array('class' => 'btn btn-primary'))}}
+				<a href="{{URL::to('/phone')}}"><button type="button" class="btn btn-danger">Salir</button></a>
+				</div>
+			</div>
 		{{Form::close()}}
 
 		</div>

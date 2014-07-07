@@ -5,7 +5,7 @@
 	<title>Phonebook</title>
 	{{HTML::style('css/bootstrap.css')}}
 	{{HTML::style('css/app.css')}}
-	{{HTML::style('http://fonts.googleapis.com/css?family=Oxygen:300')}}
+	{{HTML::style('http://fonts.googleapis.com/css?family=Lato')}}
 </head>
 <body>
 {{HTML::script('js/jquery1-11-0.min.js')}}
