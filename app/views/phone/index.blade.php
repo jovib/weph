@@ -81,6 +81,7 @@ class="active"
 									<ul class="list-group">
 										<li class="list-group-item">{{$value->cargo}}</li>
 										<li class="list-group-item">{{$value->dep}}</li>
+										<li class="list-group-item">{{$value->sucursal}}</li>
 									</ul>
 								</div>
 							</div>
