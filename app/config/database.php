@@ -39,10 +39,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'contac',
-			'username'  => 'root',
-			'password'  => 'Mateo2819',
+			'host'      => '127.13.157.2',
+			'database'  => 'phone',
+			'username'  => 'adminXypxBCH',
+			'password'  => 'KubXY-BfBIgJ',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
