@@ -20,7 +20,7 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('user.create');
 	}
 
 
