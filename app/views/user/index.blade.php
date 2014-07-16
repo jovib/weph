@@ -1,3 +1,6 @@
+@extends('layouts/master')
+
+@section('cont')
 <h1 class="page-header">Directorio</h1>
 <table class="table table-hover">
 	<thead>
@@ -15,3 +18,4 @@
 	@endforeach
 	</tbody>
 </table>
+@stop
