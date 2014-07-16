@@ -32,7 +32,29 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+			'firstname'=>'required',
+			'lastname'=>'required',
+			'username'=>'required',
+			'password'=>'required|between:6,12|confirmed',
+			'password_confirmation'=>'required|between:6,12'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()){
+			return Redirect::to('user/create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			$user = new User;
+			$user->fistname = Input::get('firstname');
+			$user->lastname = Input::get('lastname');
+			$user->mail = Input::get('mail');
+			$user->username = Input::get('username');
+			$user->password = Hash::make('password');
+			$user->save();
+
+			return Redirect::route('user.index');
+		}
 	}
 
 
