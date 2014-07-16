@@ -12,5 +12,6 @@
 			<td>{{$value->lastname}}</td>
 			<td>{{$value->mail}}</td>
 		</tr>
+	@endforeach
 	</tbody>
 </table>
