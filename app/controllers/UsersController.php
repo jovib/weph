@@ -46,7 +46,7 @@ class UsersController extends \BaseController {
 				->withInput(Input::except('password'));
 		} else {
 			$user = new User;
-			$user->fistname = Input::get('firstname');
+			$user->firstname = Input::get('firstname');
 			$user->lastname = Input::get('lastname');
 			$user->mail = Input::get('mail');
 			$user->username = Input::get('username');
