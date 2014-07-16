@@ -9,7 +9,8 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('user.index');
+		$user = Phone::all();
+		return View::make('user.index')->with('user',$user);
 	}
 
 
