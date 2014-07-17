@@ -13,11 +13,15 @@ class SessionsController extends BaseController {
 
 	public function postlogin()
 	{
-		if (Auth::attempt(Input::only('username','password')))
-		{
-			return Redirect::to('start');
-		}
-		return Redirect::to('login')
+		$user = array(
+            'username' => Input::get('username'),
+            'password'=> Input::get('password')
+        );
+        if(Auth::attempt($user, Input::get('remember-me', 0)))
+        {
+            return Redirect::to('strat');
+        }
+        return Redirect::to('login')
                     ->with('mensaje_error', '
                         <div class="alert alert-danger fade in">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
