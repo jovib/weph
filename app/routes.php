@@ -5,11 +5,18 @@ Route::get('login', array(
 	'uses'=>'SessionsController@showlogin'
 ));
 
-Route::resource('phone', 'PhoneController');
-Route::resource('user', 'UsersController');
-Route::get('/', function()
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('start');
+
+  Route::resource('phone', 'PhoneController');
+  Route::resource('user', 'UsersController');
+  Route::get('/', function()
+  {
+    return View::make('start');
+  });
+
+  Route::get('logout', 'SessionsController@logout');
+
 });
 
 Route::post('login', 'SessionsController@postlogin');

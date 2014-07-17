@@ -6,22 +6,18 @@ class SessionsController extends BaseController {
 	{
 		if (Auth::check())
 		{
-			return Redirect::to('strat');
+			return Redirect::to('/');
 		}
 		return View::make('login');
 	}
 
 	public function postlogin()
 	{
-		$user = array(
-            'username' => Input::get('username'),
-            'password'=> Input::get('password')
-        );
-        if(Auth::attempt($user, Input::get('remember-me', 0)))
-        {
-            return Redirect::to('strat');
-        }
-        return Redirect::to('login')
+		if (Auth::attempt(Input::only('username','password')))
+		{
+			return Redirect::to('/');
+		}
+		return Redirect::to('login')
                     ->with('mensaje_error', '
                         <div class="alert alert-danger fade in">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
