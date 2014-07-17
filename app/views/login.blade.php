@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Iniciar sesión</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    {{HTML::style('css/bootstrap.css')}}
     
 <style type="text/css">
 	body {
@@ -60,15 +60,13 @@
     {{ Session::get('mensaje_error') }}
   @endif
   <center><h1 class="form-signin-heading">Contact Center</h1></center>
-  {{Form::open(array('url'=>'/store', 'class'=>'form-signin'))}}
+  {{Form::open(array('url'=>'login', 'class'=>'form-signin'))}}
     {{Form::text('username', Input::old('username'), array('class'=>'form-control', 'placeholder'=>'Username'))}}
     {{Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
-    {{Form::label('lblRemenberme', 'Recordarme')}}
-    {{Form::checkbox('remenberme', true)}}
     {{Form::submit('Iniciar', array('class'=>'btn btn-lg btn-primary btn-block'))}}
   {{Form::close()}}
 </div>
-<script src="/js/jquery1-11-0.min.js"></script>
-<script src="/js/bootstrap.js"></script>
+{{HTML::script('js/jquery1-11-0.min.js')}}
+{{HTML::script('js/bootstrap.js')}}
 </body>
 </html>

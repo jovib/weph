@@ -67,7 +67,14 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check())
+		return Redirect::to('/')
+		->with('mensaje_error', '
+                        <div class="alert alert-danger fade in">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4>Oh snap! Tienes un error!</h4>
+                        <p>Tus datos son incorrectos</p>
+                        </div>');
 });
 
 /*

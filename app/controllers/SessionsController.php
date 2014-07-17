@@ -13,7 +13,7 @@ class SessionsController extends BaseController {
 
 	public function postlogin()
 	{
-		if (Auth::attempt($user, Input::only('username','password')))
+		if (Auth::attempt(Input::only('username','password')))
 		{
 			return Redirect::to('start');
 		}
