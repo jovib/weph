@@ -28,7 +28,7 @@ $(function() {
 
 @stop
 
-@section('phone-active')
+@section('active')
 class="active"
 @stop
 

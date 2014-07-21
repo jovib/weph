@@ -12,7 +12,8 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="{{URL::to('/phone')}}">Inicio</a></li>
+				<li><a href="{{URL::to('/')}}">Inicio</a></li>
+				<li><a href="{{URL::to('/user')}}">Usuarios</a></li>
 			</ul>
 			@yield('search')
 		</div>

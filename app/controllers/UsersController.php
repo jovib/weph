@@ -53,6 +53,13 @@ class UsersController extends \BaseController {
 			$user->password = Hash::make('password');
 			$user->save();
 
+			Session::flash('message', '
+			<div class="alert alert-succes fade in">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4>Cambio satisfactorio!!</h4>
+			<p>Usuario creado correctamente!!</p>
+			</div>');
+
 			return Redirect::route('user.index');
 		}
 	}
@@ -78,7 +85,9 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::find($id);
+		return View::make('user.edit')
+			->with('user', $user);
 	}
 
 
@@ -90,7 +99,36 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+			'firstname'=>'required',
+			'lastname'=>'required',
+			'username'=>'required',
+			'password'=>'required|between:6,12|confirmed',
+			'password_confirmation'=>'required|between:6,12'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()){
+			return Redirect::to('user/'.$id.'/edit')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			$user = User::find($id);
+			$user->firstname = Input::get('firstname');
+			$user->lastname = Input::get('lastname');
+			$user->mail = Input::get('mail');
+			$user->username = Input::get('username');
+			$user->password = Hash::make('password');
+			$user->save();
+
+			Session::flash('message', '
+			<div class="alert alert-succes fade in">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4>Cambio satisfactorio!!</h4>
+			<p>Usuario actualizado correctamente!!</p>
+			</div>');
+
+			return Redirect::to('user');
+		}
 	}
 
 
@@ -102,7 +140,15 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$user = User::find($id);
+		$user->delete();
+		Session::flash('message', '
+			<div class="alert alert-warning fade in">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	        <h4>Oh snap!</h4>
+	        <p>Usuario borrado correctamente!!</p>
+	        </div>');
+		return Redirect::to('user');
 	}
 
 
