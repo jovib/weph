@@ -2,34 +2,17 @@
 
 class PhoneController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		$phone=Phone::all();
 		return View::make('phone.index')->with('phone',$phone);
 	}
 
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 	public function create()
 	{
 		return View::make('phone.create');
 	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
 	public function store()
 	{
 		$rules = array(
@@ -64,26 +47,12 @@ class PhoneController extends \BaseController {
 		}
 	}
 
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function show($phone_id)
 	{
 		$phone=Phone::find($phone_id);
 		return View::make('phone.show')->with('phone', $phone);
 	}
 
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function edit($phone_id)
 	{
 		$phone = Phone::find($phone_id);
@@ -91,13 +60,6 @@ class PhoneController extends \BaseController {
 			->with('phone', $phone);
 	}
 
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function update($phone_id)
 	{
 		$rules = array(
@@ -134,13 +96,6 @@ class PhoneController extends \BaseController {
 		}
 	}
 
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($phone_id)
 	{
 		$phone = Phone::find($phone_id);
