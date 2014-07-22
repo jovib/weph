@@ -1,12 +1,17 @@
 @extends('layouts/master')
 
-@section('phone-create')
-<li class="active"><a href="{{URL::to('/phone/create')}}">Crear</a></li>
+@section('title')
+Directorio
 @stop
 
+@section('action-menu')
+<li><a href="{{URL::to('/phone')}}">Ver todo</a></li>
+@stop
+
+@include('layouts/sidebar')
 @section('cont')
 <div class="col-xs-10">
-	<div class="panel panel-primary">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">Crear nuevo usuario</h3>
 		</div>

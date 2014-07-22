@@ -1,5 +1,14 @@
 @extends('layouts/master')
 
+@section('title')
+Usuarios
+@stop
+@section('action-menu')
+<li><a href="{{URL::to('/user')}}">Ver todo</a></li>
+<li><a href="{{URL::to('/user/create')}}">Crear</a></li>
+@stop
+
+@include('layouts/sidebar')
 @section('cont')
 
 @if (Session::has('message'))

@@ -23,19 +23,20 @@ $(function() {
 	<div class="form-group">
 		<input data-column="all" type="search" class="search form-control" placeholder="Search...">
 	</div>
-	<button type="submit" class="reset btn btn-default">clear</button>
+	<button type="submit" class="reset btn btn-success">clear</button>
 </form>
 
 @stop
 
-@section('active')
-class="active"
+@section('title')
+Directorio
+@stop
+@section('action-menu')
+<li><a href="{{URL::to('/phone')}}">Ver todo</a></li>
+<li><a href="{{URL::to('/phone/create')}}">Crear</a></li>
 @stop
 
-@section('phone-create')
-<li><a href="{{URL::to('/phone/create')}}">		Crear</a></li>
-@stop
-
+@include('layouts/sidebar')
 @section('cont')
 @if (Session::has('message'))
 	{{ Session::get('message') }}
@@ -68,20 +69,20 @@ class="active"
 						<div class="modal-content">
 							<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Detalles</h4>
+							<h4 class="modal-title" id="myModalLabel">Detalles del usuario</h4>
 							</div>
 							<div class="modal-body">
 								<div>
 									<ul class="list-group">
-										<li class="list-group-item">{{$value->anie}}</li>
-										<li class="list-group-item">{{$value->firstname}} {{$value->lastname}}</li>
-										<li class="list-group-item">{{$value->mail}}</li>
-										<li class="list-group-item">{{$value->celular}}</li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp&nbsp{{$value->anie}}</li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp{{$value->firstname}} {{$value->lastname}}</li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp{{$value->mail}}</li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-phone"></span>&nbsp&nbsp{{$value->celular}}</li>
 									</ul>
 									<ul class="list-group">
-										<li class="list-group-item">{{$value->cargo}}</li>
-										<li class="list-group-item">{{$value->dep}}</li>
-										<li class="list-group-item">{{$value->sucursal}}</li>
+										<li class="list-group-item"><strong>Cargo:</strong> {{$value->cargo}}</li>
+										<li class="list-group-item"><strong>Departamento:</strong> {{$value->dep}}</li>
+										<li class="list-group-item"><strong>Sucursal:</strong> {{$value->sucursal}}</li>
 									</ul>
 								</div>
 							</div>
