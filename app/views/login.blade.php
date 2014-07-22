@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Iniciar sesión</title>
-    {{HTML::style('css/bootstrap.css')}}
+    {{HTML::style('css/bootstrap.min.css')}}
     
 <style type="text/css">
 	body {
@@ -67,6 +67,6 @@
   {{Form::close()}}
 </div>
 {{HTML::script('js/jquery1-11-0.min.js')}}
-{{HTML::script('js/bootstrap.js')}}
+{{HTML::script('js/bootstrap.min.js')}}
 </body>
 </html>
