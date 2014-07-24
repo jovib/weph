@@ -34,6 +34,7 @@ class PhoneController extends \BaseController {
 			$phone->celular=Input::get('celular');
 			$phone->cargo=Input::get('cargo');
 			$phone->dep=Input::get('dep');
+			$phone->sucursal=Input::get('sucursal');
 			$phone->note=Input::get('note');
 			$phone->save();
 
@@ -84,6 +85,7 @@ class PhoneController extends \BaseController {
 			$phone->celular = Input::get('celular');
 			$phone->cargo = Input::get('cargo');
 			$phone->dep = Input::get('dep');
+			$phone->sucursal=Input::get('sucursal');
 			$phone->note = Input::get('note');
 			$phone->save();
 
