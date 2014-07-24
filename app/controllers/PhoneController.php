@@ -38,7 +38,7 @@ class PhoneController extends \BaseController {
 			$phone->save();
 
 			Session::flash('message', '
-			<div class="alert alert-succes fade in">
+			<div class="alert alert-success fade in">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			<h4>Cambio satisfactorio!!</h4>
 			<p>Contacto creado correctamente!!</p>
