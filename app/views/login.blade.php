@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Iniciar sesión</title>
-    {{HTML::style('css/bootstrap.min.css')}}
+    {{HTML::style('//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')}}
     
 <style type="text/css">
 	body {
