@@ -3,7 +3,7 @@
 <head>
 	<meta charset ="utf-8">
 	<title>@yield('title') - Phonebook</title>
-	{{HTML::style('css/bootstrap.min.css')}}
+	{{HTML::style('//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')}}
 	{{HTML::style('css/app.css')}}
 	{{HTML::style('http://fonts.googleapis.com/css?family=Lato')}}
 </head>
