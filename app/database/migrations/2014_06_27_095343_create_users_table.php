@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('mail',50)->nullable()->default('deconocido');
 			$table->string('username',20);
 			$table->string('password',255);
+			$table->integer('role_id',1);
 			$table->string('remember_token',255)->nullable();
 			$table->timestamps();
 

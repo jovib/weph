@@ -18,6 +18,7 @@ class UsersController extends \BaseController {
 		$rules = array(
 			'firstname'=>'required',
 			'lastname'=>'required',
+			'role_id'=>'required',
 			'username'=>'required',
 			'password'=>'required|between:6,12|confirmed',
 			'password_confirmation'=>'required|between:6,12'
@@ -32,12 +33,13 @@ class UsersController extends \BaseController {
 			$user->firstname = Input::get('firstname');
 			$user->lastname = Input::get('lastname');
 			$user->mail = Input::get('mail');
+			$user->role_id = Input::get('role_id');
 			$user->username = Input::get('username');
 			$user->password = Hash::make('password');
 			$user->save();
 
 			Session::flash('message', '
-			<div class="alert alert-succes fade in">
+			<div class="alert alert-success fade in">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			<h4>Cambio satisfactorio!!</h4>
 			<p>Usuario creado correctamente!!</p>
@@ -66,6 +68,7 @@ class UsersController extends \BaseController {
 		$rules = array(
 			'firstname'=>'required',
 			'lastname'=>'required',
+			'role_id'=>'required',
 			'username'=>'required',
 			'password'=>'required|between:6,12|confirmed',
 			'password_confirmation'=>'required|between:6,12'
@@ -80,12 +83,13 @@ class UsersController extends \BaseController {
 			$user->firstname = Input::get('firstname');
 			$user->lastname = Input::get('lastname');
 			$user->mail = Input::get('mail');
+			$user->role_id = Input::get('role_id');
 			$user->username = Input::get('username');
 			$user->password = Hash::make('password');
 			$user->save();
 
 			Session::flash('message', '
-			<div class="alert alert-succes fade in">
+			<div class="alert alert-success fade in">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			<h4>Cambio satisfactorio!!</h4>
 			<p>Usuario actualizado correctamente!!</p>

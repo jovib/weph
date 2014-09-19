@@ -9,12 +9,23 @@
 
     <title>Iniciar sesión</title>
     {{HTML::style('//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')}}
+    {{HTML::script('//use.edgefonts.net/vt323:n4:all.js')}}
+    
     
 <style type="text/css">
 	body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #fff;
+}
+
+.date {
+  font-family: vt323, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  color: #DCDCDC;
+  padding-top: 1px;
+  background: #fff;
 }
 
 .form-signin {
@@ -55,6 +66,7 @@
 </head>
 
 <body>
+<div class="date"><center>{{ date('F j, Y, g:i A') }}</center></div>
 <div class="container">
   @if(Session::has('mensaje_error'))
     {{ Session::get('mensaje_error') }}

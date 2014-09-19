@@ -38,9 +38,7 @@ class MailServiceProvider extends ServiceProvider {
 				$app['view'], $app['swift.mailer'], $app['events']
 			);
 
-			$mailer->setLogger($app['log'])->setQueue($app['queue']);
-
-			$mailer->setContainer($app);
+			$this->setMailerDependencies($mailer, $app);
 
 			// If a "from" address is set, we will set it on the mailer so that all mail
 			// messages sent by the applications will utilize the same "from" address
@@ -61,6 +59,28 @@ class MailServiceProvider extends ServiceProvider {
 
 			return $mailer;
 		});
+	}
+
+	/**
+	 * Set a few dependencies on the mailer instance.
+	 *
+	 * @param  \Illuminate\Mail\Mailer  $mailer
+	 * @param  \Illuminate\Foundation\Application  $app
+	 * @return void
+	 */
+	protected function setMailerDependencies($mailer, $app)
+	{
+		$mailer->setContainer($app);
+
+		if ($app->bound('log'))
+		{
+			$mailer->setLogger($app['log']);
+		}
+
+		if ($app->bound('queue'))
+		{
+			$mailer->setQueue($app['queue']);
+		}
 	}
 
 	/**
@@ -131,7 +151,7 @@ class MailServiceProvider extends ServiceProvider {
 			extract($config);
 
 			// The Swift SMTP transport instance will allow us to use any SMTP backend
-			// for delivering mail such as Sendgrid, Amazon SMS, or a custom server
+			// for delivering mail such as Sendgrid, Amazon SES, or a custom server
 			// a developer has available. We will just pass this configured host.
 			$transport = SmtpTransport::newInstance($host, $port);
 

@@ -31,6 +31,10 @@ Usuarios
 			<div class="form-group">
 				<div class="col-xs-4">
 				{{Form::text('mail',Input::old('mail'), array('class'=>'form-control', 'placeholder'=>'Correo'))}}
+				</div>
+				<div class="col-xs-4">
+				{{Form::text('role_id',Input::old('role_id'), array('class'=>'form-control', 'placeholder'=>'Rol'))}}
+				{{$errors->first('role_id')}}
 				</div>		
 			</div>
 			<div class="form-group">

@@ -36,7 +36,14 @@ Usuarios
 				<div class="col-sm-10">	
 					{{Form::text('mail', null, array('class'=>'form-control'));}}
 				</div>
-			</div>	
+			</div>
+			<div class="form-group">
+				{{Form::label('role_id', 'Rol',array('class'=>'col-sm-2 control-label'));}}
+				<div class="col-xs-4">
+				{{Form::text('role_id',Input::old('role_id'), array('class'=>'form-control', 'placeholder'=>'Rol'))}}
+				{{$errors->first('role_id')}}
+				</div>
+			</div>
 			<div class="form-group">
 				{{Form::label('username', 'Usuario',array('class'=>'col-sm-2 control-label'));}}
 				<div class="col-sm-10">	
