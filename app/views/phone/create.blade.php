@@ -44,10 +44,24 @@ Directorio
 				{{Form::text('cargo',Input::old('cargo'), array('class'=>'form-control', 'placeholder'=>'Cargo'))}}
 				</div>
 				<div class="col-xs-3">
-				{{Form::select('dep', array('UNKNOWN' => 'DEPARTAMENTO','SERVICIO TECNICO' => 'SERVICIO TECNICO','REPUESTOS' => 'REPUESTOS', 'MARKETING' => 'MARKETING', 'MAQUINARIA -- INDUSTRIAL' => 'MAQUINARIA -- INDUSTRIAL', 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD' => 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD', 'GTOS DEPTO. DE SISTEMAS' => 'GTOS DEPTO. DE SISTEMAS', 'EJECUTIVO' => 'EJECUTIVO', 'DESARROLLO DE PERSONAL Y SGI' => 'DESARROLLO DE PERSONAL Y SGI', 'CONTRALORIA' => 'CONTRALORIA'), null, array('class'=>'form-control'));}}
+				{{Form::select('dep', array(
+					'UNKNOWN' => 'DEPARTAMENTO',
+					'SERVICIO TECNICO' => 'SERVICIO TECNICO',
+					'REPUESTOS' => 'REPUESTOS',
+					'MARKETING' => 'MARKETING',
+					'MAQUINARIA -- INDUSTRIAL' => 'MAQUINARIA -- INDUSTRIAL',
+					'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD' => 'GTOS. DE VTAS REPUESTO Y SOPORTE AL PROD',
+					'GTOS DEPTO. DE SISTEMAS' => 'GTOS DEPTO. DE SISTEMAS',
+					'EJECUTIVO' => 'EJECUTIVO',
+					'DESARROLLO DE PERSONAL Y SGI' => 'DESARROLLO DE PERSONAL Y SGI',
+					'CONTRALORIA' => 'CONTRALORIA'), null, array('class'=>'form-control'));}}
 				</div>
 				<div class="col-xs-3">
-				{{Form::select('sucursal', array('UNKNOWN' => 'SUCURSAL','CASA MATRIZ' => 'CASA MATRIZ','EL ROBLE' => 'EL ROBLE', 'DAVID' => 'DAVID'), null, array('class'=>'form-control'));}}
+				{{Form::select('sucursal', array(
+					'UNKNOWN' => 'SUCURSAL',
+					'CASA MATRIZ' => 'CASA MATRIZ',
+					'EL ROBLE' => 'EL ROBLE',
+					'DAVID' => 'DAVID'), null, array('class'=>'form-control'));}}
 				</div>	
 			</div>
 			<div class="form-group">
