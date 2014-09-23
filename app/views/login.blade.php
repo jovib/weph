@@ -13,12 +13,14 @@
     
     
 <style type="text/css">
-	body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+	body {  
   background-color: #fff;
 }
 
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .date {
   font-family: vt323, sans-serif;
   font-style: normal;
@@ -26,6 +28,7 @@
   color: #DCDCDC;
   padding-top: 1px;
   background: #fff;
+  text-align: right;
 }
 
 .form-signin {
@@ -66,7 +69,7 @@
 </head>
 
 <body>
-<div class="date"><center>{{ date('F j, Y, g:i A') }}</center></div>
+<div class="date">{{ date('F j, Y, g:i A') }}</div>
 <div class="container">
   @if(Session::has('mensaje_error'))
     {{ Session::get('mensaje_error') }}
