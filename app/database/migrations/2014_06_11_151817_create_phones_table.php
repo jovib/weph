@@ -14,6 +14,7 @@ class CreatePhonesTable extends Migration {
 	{
 		Schema::create('phones', function(Blueprint $table)
 		{
+			$table->engine = 'InnoDB';
 			$table->increments('phone_id');
 			$table->string('anie',10);
 			$table->string('firstname',30);
