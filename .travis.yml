@@ -1,6 +1,5 @@
 language: php
 
-# Versions of PHP you want your project run with.
 php:
   - 5.4
   - 5.5
