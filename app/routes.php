@@ -9,6 +9,10 @@ Route::group(array('before' => 'auth'), function()
   {
     return View::make('start');
   });
+  Route::get('profile', function()
+  {
+    return View::make('profile');
+  });
 
   Route::get('logout', 'SessionsController@destroy');
 

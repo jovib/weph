@@ -18,7 +18,7 @@
 				<li class="dropdown">
 				<a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"><span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-				<li><a href="{{URL::to('user/{user}')}}">Perfil</a></li>
+				<li><a href="{{URL::to('/profile')}}">Perfil</a></li>
 				<li class="divider"></li>
 				<li><a href="{{URL::to('/logout')}}">Salir</a></li>
 				</ul>
