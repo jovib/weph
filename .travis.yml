@@ -26,6 +26,6 @@ deploy:
   password:
     secure: x1Rfx+QHc+1hi+P+wSrGNMTJ7vIsa2AEUEEccxnLUui5KsySH+ObiAAnK23+kart12+psxeZ5QMhbQK548bhnEcCtVOdRCMq6kIDBy+w75pY+az0huN+8koyRV/5ZtqkB5oanikkekM49i6jK4q8os+EPJ/+/FcC4mJ0aFl2n3Q=
   app: phone
-  domain: phone-jovibi.rhcloud.com
+  domain: jovibi
   on:
     repo: jovib/weph
