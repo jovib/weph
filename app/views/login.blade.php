@@ -10,10 +10,10 @@
     <title>Iniciar sesión</title>
     {{HTML::style('//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')}}
     {{HTML::script('//use.edgefonts.net/vt323:n4:all.js')}}
-    
-    
+
+
 <style type="text/css">
-	body {  
+	body {
   background-color: #fff;
 }
 
@@ -75,7 +75,7 @@
     {{ Session::get('mensaje_error') }}
   @endif
   <center><h1 class="form-signin-heading">Contact Center</h1></center>
-  {{Form::open(array('url'=>'login', 'class'=>'form-signin'))}}
+  {{Form::open(array('route' => 'sessions.store', 'class'=>'form-signin'))}}
     {{Form::text('username', Input::old('username'), array('class'=>'form-control', 'placeholder'=>'Username'))}}
     {{Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password'))}}
     {{Form::submit('Iniciar', array('class'=>'btn btn-lg btn-primary btn-block'))}}

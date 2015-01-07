@@ -2,21 +2,27 @@
 
 class SessionsController extends BaseController {
 
-	public function showlogin()
+	public function index()
 	{
-		if (Auth::check())
-		{
-			return Redirect::to('/');
-		}
+		return View::make('sessions.index');
+	}
+
+
+  public function create()
+	{
 		return View::make('login');
 	}
 
-	public function postlogin()
+  public function store()
 	{
-		if (Auth::attempt(Input::only('username','password')))
-		{
-			return Redirect::to('/');
-		}
+		$input = Input::all();
+		$attempt = Auth::attempt([
+			'username' => $input['username'],
+			'password' => $input['password']
+		]);
+
+		if ($attempt) return Redirect::intended('/');
+
 		return Redirect::to('login')
                     ->with('mensaje_error', '
                         <div class="alert alert-danger fade in">
@@ -26,7 +32,7 @@ class SessionsController extends BaseController {
                         </div>')
                     ->withInput();
 	}
-	public function logout()
+	public function destroy()
 	{
 		Auth::logout();
         return Redirect::to('login')

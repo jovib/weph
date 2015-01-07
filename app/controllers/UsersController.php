@@ -32,7 +32,7 @@ class UsersController extends \BaseController {
 			$user = new User;
 			$user->firstname = Input::get('firstname');
 			$user->lastname = Input::get('lastname');
-			$user->mail = Input::get('mail');
+			$user->email = Input::get('email');
 			$user->role_id = Input::get('role_id');
 			$user->username = Input::get('username');
 			$user->password = Hash::make('password');
@@ -82,7 +82,7 @@ class UsersController extends \BaseController {
 			$user = User::find($id);
 			$user->firstname = Input::get('firstname');
 			$user->lastname = Input::get('lastname');
-			$user->mail = Input::get('mail');
+			$user->email = Input::get('email');
 			$user->role_id = Input::get('role_id');
 			$user->username = Input::get('username');
 			$user->password = Hash::make('password');

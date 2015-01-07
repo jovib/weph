@@ -1,10 +1,5 @@
 <?php
 
-Route::get('login', array(
-	'as'=>'login',
-	'uses'=>'SessionsController@showlogin'
-));
-
 Route::group(array('before' => 'auth'), function()
 {
 
@@ -15,8 +10,10 @@ Route::group(array('before' => 'auth'), function()
     return View::make('start');
   });
 
-  Route::get('logout', 'SessionsController@logout');
+  Route::get('logout', 'SessionsController@destroy');
 
 });
 
-Route::post('login', 'SessionsController@postlogin');
+Route::get('login', 'SessionsController@create');
+
+Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'store', 'destroy']]);

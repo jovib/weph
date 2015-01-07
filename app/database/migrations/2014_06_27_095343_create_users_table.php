@@ -16,12 +16,12 @@ class CreateUsersTable extends Migration {
 		{
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->string('firstname',50);
-			$table->string('lastname',50);
-			$table->string('mail',50)->nullable()->default('deconocido');
-			$table->string('username',20);
-			$table->string('password',255);
-			$table->integer('role_id',1);
+			$table->string('firstname', 50);
+			$table->string('lastname', 50);
+			$table->string('email', 50)->unique()->nullable()->default('desconocido');
+			$table->string('role_id', 3);
+			$table->string('username', 20);
+			$table->string('password', 255);
 			$table->string('remember_token',255)->nullable();
 			$table->timestamps();
 
