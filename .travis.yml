@@ -1,32 +1,31 @@
 language: php
-
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - hhvm
-
-# Commands to be run before your environment runs.
+- 5.4
+- 5.5
+- 5.6
+- hhvm
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-
-# Commands you want to run that will verify your build.
+- composer self-update
+- composer install --prefer-source --no-interaction --dev
 script: phpunit
-
-# allow_failures: Allow this build to fail under the specified environments.
-# fast_finish: If your build fails do not continue trying to build, just stop.
 matrix:
   allow_failures:
-    - php: 5.4
-    - php: hhvm
+  - php: 5.4
+  - php: hhvm
   fast_finish: true
-
-# Customize when the notification emails are sent.
 notifications:
   webhooks:
     urls:
-      - https://webhooks.gitter.im/e/a849e8f74c53cf95e503
-    on_success: change  # options: [always|never|change] default: always
-    on_failure: always  # options: [always|never|change] default: always
-    on_start: false     # default: false
+    - https://webhooks.gitter.im/e/a849e8f74c53cf95e503
+    on_success: change
+    on_failure: always
+    on_start: false
+deploy:
+  provider: openshift
+  user: jovib29@gmail.com
+  password:
+    secure: x1Rfx+QHc+1hi+P+wSrGNMTJ7vIsa2AEUEEccxnLUui5KsySH+ObiAAnK23+kart12+psxeZ5QMhbQK548bhnEcCtVOdRCMq6kIDBy+w75pY+az0huN+8koyRV/5ZtqkB5oanikkekM49i6jK4q8os+EPJ/+/FcC4mJ0aFl2n3Q=
+  app: phone
+  domain: phone-jovibi.rhcloud.com
+  on:
+    repo: jovib/weph
