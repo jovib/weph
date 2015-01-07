@@ -12,12 +12,13 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="{{URL::to('/')}}">Inicio</a></li>
-				<li><a href="{{URL::to('/phone')}}">Directorio</a></li>
+				<li><a class="glyphicon glyphicon-home" href="{{URL::to('/')}}"></a></li>
+				<li><a href="{{URL::to('/phone')}}">DIRECTORIO</a></li>
+				<li><a href="{{URL::to('/user/')}}">USUARIOS</a></li>
 				<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span></a>
+				<a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"><span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-				<li><a href="{{URL::to('/user')}}">Ver todos</a></li>
+				<li><a href="{{URL::to('user/{user}')}}">Perfil</a></li>
 				<li class="divider"></li>
 				<li><a href="{{URL::to('/logout')}}">Salir</a></li>
 				</ul>
