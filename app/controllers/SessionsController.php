@@ -2,15 +2,9 @@
 
 class SessionsController extends BaseController {
 
-	public function index()
-	{
-		return View::make('sessions.index');
-	}
-
-
   public function create()
 	{
-		return View::make('login');
+		return View::make('sessions.login');
 	}
 
   public function store()

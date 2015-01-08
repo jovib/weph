@@ -11,7 +11,7 @@ Route::group(array('before' => 'auth'), function()
   });
   Route::get('profile', function()
   {
-    return View::make('profile');
+    return View::make('sessions.profile');
   });
 
   Route::get('logout', 'SessionsController@destroy');
@@ -20,4 +20,4 @@ Route::group(array('before' => 'auth'), function()
 
 Route::get('login', 'SessionsController@create');
 
-Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'store', 'destroy']]);
+Route::resource('sessions', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);
