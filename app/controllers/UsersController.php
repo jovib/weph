@@ -85,7 +85,8 @@ class UsersController extends \BaseController {
 			$user->email = Input::get('email');
 			$user->role_id = Input::get('role_id');
 			$user->username = Input::get('username');
-			$user->password = Hash::make('password');
+			$password = Input::get('password');
+			$user->password = Hash::make($password);
 			$user->save();
 
 			Session::flash('message', '
