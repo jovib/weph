@@ -68,7 +68,7 @@ Usuarios
 			<div class="form-group">
 				<div class="col-sm-10">
 				{{Form::submit('Salvar', array('class' => 'btn btn-primary'));}}
-				<a href="{{URL::to('/user')}}"><button type="button" class="btn btn-danger">Salir</button></a>
+				<a href="{{URL::previous()}}"><button type="button" class="btn btn-danger">Salir</button></a>
 				</div>
 			</div>
 		</div>
