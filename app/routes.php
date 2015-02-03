@@ -4,7 +4,7 @@ Route::group(array('before' => 'auth'), function()
 {
 
   Route::resource('phone', 'PhoneController');
-  Route::resource('user', 'UsersController', ['only' => ['index', 'edit', 'create', 'store', 'destroy']]);
+  Route::resource('user', 'UsersController', ['only' => ['index', 'edit', 'create', 'update', 'store', 'destroy']]);
   Route::get('/', function()
   {
     return View::make('start');
