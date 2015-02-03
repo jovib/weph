@@ -15,7 +15,6 @@ $(function() {
 	});
 });
 </script>
-
 @stop
 
 @section('search')
@@ -31,12 +30,14 @@ $(function() {
 @section('title')
 Directorio
 @stop
+
 @section('action-menu')
 <li><a href="{{URL::to('/phone')}}">Ver todo</a></li>
 <li><a href="{{URL::to('/phone/create')}}">Crear</a></li>
 @stop
 
 @include('layouts/sidebar')
+
 @section('cont')
 @if (Session::has('message'))
 	{{ Session::get('message') }}
