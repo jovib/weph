@@ -17,16 +17,16 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.13.157.2',
-			'database'  => 'phone',
-			'username'  => 'adminXypxBCH',
-			'password'  => 'KubXY-BfBIgJ',
+			'host'      => '127.9.224.130',
+			'database'  => 'weph',
+			'username'  => 'admin6N42NxJ',
+			'password'  => 'nEhU58RBdiNA',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
 
-/*		
+/*
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
@@ -61,29 +61,7 @@ return array(
 
 	),
 
-	/*
-	|--------------------------------------------------------------------------
-	| Migration Repository Table
-	|--------------------------------------------------------------------------
-	|
-	| This table keeps track of all the migrations that have already run for
-	| your application. Using this information, we can determine which of
-	| the migrations on disk haven't actually been run in the database.
-	|
-	*/
-
 	'migrations' => 'migrations',
-
-	/*
-	|--------------------------------------------------------------------------
-	| Redis Databases
-	|--------------------------------------------------------------------------
-	|
-	| Redis is an open source, fast, and advanced key-value store that also
-	| provides a richer set of commands than a typical key-value systems
-	| such as APC or Memcached. Laravel makes it easy to dig right in.
-	|
-	*/
 
 	'redis' => array(
 
